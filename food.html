@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Food &amp; Delicacies – Batanes</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="media/images/homepage/batanesseal.png" alt="Batanes Seal">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About the Province</a></li>
+        <li class="nav-item"><a class="nav-link" href="destinations.html">Tourist Destinations</a></li>
+        <li class="nav-item"><a class="nav-link" href="festivals.html">Festivals &amp; Culture</a></li>
+        <li class="nav-item"><a class="nav-link active" href="food.html">Food &amp; Delicacies</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="traveltips.html">Travel Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="inquiry.html">Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-banner text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Food &amp; Delicacies</h1>
+    <p class="lead mb-0">Taste the unique flavors of Ivatan cooking — from sea to table.</p>
+  </div>
+</div>
+
+<div class="container mb-5">
+
+  <img src="media/images/homepage/cuisine.jpg" class="subpage-img" alt="Ivatan Cuisine">
+  <p class="lead text-center mb-4">The food of Batanes is shaped by the sea, the mountains, and centuries of Ivatan tradition.</p>
+
+  <hr class="section-divider">
+
+  <h3 class="mb-4">Must-Try Ivatan Dishes</h3>
+  <div id="food-list" class="row g-4 mb-5">
+    <!-- filled by script -->
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- DRINKS -->
+  <h3 class="mb-4">Local Drinks</h3>
+  <div class="row g-3 mb-5">
+    <div class="col-md-4">
+      <div class="card text-center p-3 h-100">
+        <h5> Palek</h5>
+        <p class="mb-1">Traditional Ivatan rice wine, brewed locally and served at community gatherings and celebrations.</p>
+        <p class="small text-muted mb-0"><strong>Where to try:</strong> Local households and some guesthouses</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center p-3 h-100">
+        <h5> Batanes Coffee</h5>
+        <p class="mb-1">Locally grown coffee with a strong, earthy flavor. Most famously sold at the Honesty Coffee Shop in Ivana.</p>
+        <p class="small text-muted mb-0"><strong>Where to try:</strong> Honesty Coffee Shop, Ivana</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center p-3 h-100">
+        <h5> Fresh Coconut Juice</h5>
+        <p class="mb-1">Refreshing and sweet, fresh coconut juice from Batanes' native trees is the perfect drink after a day of sightseeing.</p>
+        <p class="small text-muted mb-0"><strong>Where to try:</strong> Local markets and roadside stalls</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h5> Where to Eat in Batanes</h5>
+    <p class="mb-0">Most accommodations in Batanes offer home-cooked meals as part of their package. Local carinderias and small restaurants in Basco also serve authentic Ivatan food. Eating at these local spots is much better than big restaurants — and it helps support the community.</p>
+  </div>
+
+</div>
+
+<footer class="py-4 mt-5">
+  <div class="container text-center">
+    <img src="media/images/homepage/batanesseal.png" alt="Batanes Seal" style="height:50px;" class="mb-2">
+    <p class="mb-1"><strong>Batanes – Home of the Winds</strong></p>
+    <p class="mb-0" style="font-size:0.85rem; color:#fff;">Northernmost Province of the Philippines</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Food data array
+var foods = [
+  {
+    name: "Uvud Balls",
+    icon: "",
+    description: "Made from the pith of banana trunks mixed with minced pork or fish. These chewy balls are usually cooked in coconut milk or served in soup. The texture is unlike any other Filipino dish.",
+    whereTo: "Local carinderias in Basco and homestay meals"
+  },
+  {
+    name: "Lunis",
+    icon: "",
+    description: "Preserved pork cooked slowly in its own fat with sea salt — similar to the French confit method. It is stored in clay pots and can last for months without refrigeration.",
+    whereTo: "Ivatan family homes, local eateries in Basco"
+  },
+  {
+    name: "Dried Flying Fish (Dibang)",
+    icon: "",
+    description: "Flying fish are caught between October and February. They are dried, salted, and then grilled or fried. Dibang is one of the most important foods in Batanes and is also sold as pasalubong.",
+    whereTo: "Local markets in Basco; brought home as pasalubong"
+  },
+  {
+    name: "Coconut Crab (Tatus)",
+    icon: "",
+    description: "The coconut crab or tatus is the world's largest land arthropod and a rare delicacy in Batanes. It has a rich, buttery flavor and can be boiled, grilled, or cooked in coconut milk.",
+    whereTo: "Restaurants in Basco; ask your host family"
+  },
+  {
+    name: "Vunes",
+    icon: "",
+    description: "A warm soup made with pork, sweet potato leaves, and coconut milk. It is simple comfort food that Ivatans have been eating for generations. Perfect after a long day of exploring.",
+    whereTo: "Homestays and local restaurants in Basco and Mahatao"
+  },
+  {
+    name: "Palek (Rice Wine)",
+    icon: "",
+    description: "Traditional Ivatan rice wine with a sweet and earthy taste. It is an important part of Ivatan celebrations and hospitality. Visitors are sometimes offered a glass as a welcome drink.",
+    whereTo: "Local households and community gatherings"
+  }
+];
+
+// Build the food cards from the array
+var foodList = document.getElementById("food-list");
+foods.forEach(function(food) {
+  var col = document.createElement("div");
+  col.className = "col-md-6 col-lg-4";
+  col.innerHTML =
+    '<div class="card h-100 p-3">' +
+      '<div class="mb-2" style="font-size:2rem;">' + food.icon + '</div>' +
+      '<h5>' + food.name + '</h5>' +
+      '<p class="small text-muted mb-2">' + food.description + '</p>' +
+      '<p class="small mb-0"><strong>Where to try:</strong> ' + food.whereTo + '</p>' +
+    '</div>';
+  foodList.appendChild(col);
+});
+</script>
+</body>
+</html>

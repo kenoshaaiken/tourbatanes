@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Gallery – Batanes</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="media/images/homepage/batanesseal.png" alt="Batanes Seal">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About the Province</a></li>
+        <li class="nav-item"><a class="nav-link" href="destinations.html">Tourist Destinations</a></li>
+        <li class="nav-item"><a class="nav-link" href="festivals.html">Festivals &amp; Culture</a></li>
+        <li class="nav-item"><a class="nav-link" href="food.html">Food &amp; Delicacies</a></li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="traveltips.html">Travel Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="inquiry.html">Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-banner text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Photo Gallery</h1>
+    <p class="lead mb-0">A visual tour of Batanes — click any photo to enlarge it.</p>
+  </div>
+</div>
+
+<div class="container mb-5">
+
+  <!-- GALLERY GRID (built by JS) -->
+  <div class="row g-3" id="gallery-grid">
+    <!-- filled by script -->
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0 pb-0">
+          <span id="lightbox-counter" class="text-white-50 small"></span>
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center pt-1">
+          <img id="lightbox-img" src="" alt="" class="img-fluid rounded" style="max-height:450px;">
+          <p id="lightbox-caption" class="mt-3 mb-0 text-white-50"></p>
+        </div>
+        <div class="modal-footer border-0 justify-content-center">
+          <button class="btn btn-outline-light btn-sm" onclick="lightboxPrev()">&#8592; Prev</button>
+          <button class="btn btn-outline-light btn-sm" onclick="lightboxNext()">Next &#8594;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="py-4 mt-5">
+  <div class="container text-center">
+    <img src="media/images/homepage/batanesseal.png" alt="Batanes Seal" style="height:50px;" class="mb-2">
+    <p class="mb-1"><strong>Batanes – Home of the Winds</strong></p>
+    <p class="mb-0" style="font-size:0.85rem; color:#fff;">Northernmost Province of the Philippines</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Gallery photos array - 30 images
+var photos = [
+  { src: "media/images/homepage/marlborohills.jpg",       caption: "Marlboro Hills at sunrise"                    },
+  { src: "media/images/homepage/boulderbeach.jpg",        caption: "Valugan Boulder Beach"                        },
+  { src: "media/images/homepage/sabtang.jpg",             caption: "Sabtang Island coastline"                     },
+  { src: "media/images/homepage/lighthouse.jpg",          caption: "Basco Lighthouse at Naidi Hills"              },
+  { src: "media/images/homepage/rollinghills.jpg",        caption: "Vayang Rolling Hills, Mahatao"                },
+  { src: "media/images/homepage/mt-iraya.jpg",            caption: "Mt. Iraya, Batanes' highest peak"             },
+  { src: "media/images/homepage/houseofdakay.jpg",        caption: "The House of Dakay, Sabtang Island"           },
+  { src: "media/images/homepage/stonehouse.jpg",          caption: "Traditional Ivatan stone house"               },
+  { src: "media/images/homepage/ivana-church.jpg",        caption: "Ivana Church, a National Cultural Treasure"   },
+  { src: "media/images/homepage/batanes.jpg",             caption: "Batanes from above"                           },
+  { src: "media/images/homepage/wildlife.jpg",            caption: "Wildlife and nature in Batanes"               },
+  { src: "media/images/homepage/itbayat.jpg",             caption: "Itbayat Island sea cliffs"                    },
+  { src: "media/images/homepage/festival.jpg",            caption: "Batanes Day Festival celebrations"            },
+  { src: "media/images/homepage/cuisine.jpg",             caption: "Traditional Ivatan cuisine"                   },
+  { src: "media/images/homepage/handicrafts.jpg",         caption: "Ivatan handwoven crafts"                      },
+  { src: "media/images/homepage/history.png",             caption: "Historical Batanes"                           },
+  { src: "media/images/homepage/activities.jpg",          caption: "Adventure activities in Batanes"              },
+  { src: "media/images/homepage/travel-tips.jpg",         caption: "Scenic roads of Batanes"                      },
+  { src: "media/images/homepage/responsible-tourism.jpg", caption: "Responsible tourism in Batanes"               },
+  { src: "media/images/homepage/accomodation.jpg",        caption: "Accommodation in Basco"                       },
+  { src: "media/images/accommodation/header.jpg",         caption: "Batanes guesthouse"                           },
+  { src: "media/images/accommodation/homestays.jpg",      caption: "Ivatan homestay experience"                   },
+  { src: "media/images/accommodation/inns.jpg",           caption: "Local inns in Basco"                          },
+  { src: "media/images/homepage/vayang.jpg",       caption: "Rolling hills in the morning mist"            },
+  { src: "media/images/homepage/nakabuang.jpg",             caption: "Nakabuang Arch, Sabtang Island"               },
+  { src: "media/images/homepage/stone.jpg",          caption: "Stone house village in Sabtang"               },
+  { src: "media/images/homepage/boulders.jpg",        caption: "Volcanic boulders shaped by Mt. Iraya"        },
+  { src: "media/images/homepage/parade.jpg",            caption: "Street parade during Batanes Day"             },
+  { src: "media/images/homepage/bird.jpg",            caption: "Bird watching in Batanes forests"             },
+  { src: "media/images/homepage/islandhopping.jpg",         caption: "Island hopping around Batanes"                }
+];
+
+var currentIndex = 0;
+
+// Build gallery grid
+var grid = document.getElementById("gallery-grid");
+photos.forEach(function(photo, index) {
+  var col = document.createElement("div");
+  col.className = "col-6 col-md-4 col-lg-3 gallery-item";
+  col.innerHTML = '<img src="' + photo.src + '" alt="' + photo.caption + '" onclick="openLightbox(' + index + ')">';
+  grid.appendChild(col);
+});
+
+// Open lightbox
+function openLightbox(index) {
+  currentIndex = index;
+  updateLightbox();
+  var modal = new bootstrap.Modal(document.getElementById("lightboxModal"));
+  modal.show();
+}
+
+// Update lightbox content
+function updateLightbox() {
+  document.getElementById("lightbox-img").src = photos[currentIndex].src;
+  document.getElementById("lightbox-caption").textContent = photos[currentIndex].caption;
+  document.getElementById("lightbox-counter").textContent = (currentIndex + 1) + " / " + photos.length;
+}
+
+// Previous photo
+function lightboxPrev() {
+  currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+  updateLightbox();
+}
+
+// Next photo
+function lightboxNext() {
+  currentIndex = (currentIndex + 1) % photos.length;
+  updateLightbox();
+}
+
+// Keyboard navigation
+document.addEventListener("keydown", function(e) {
+  var modal = document.getElementById("lightboxModal");
+  if (!modal.classList.contains("show")) return;
+  if (e.key === "ArrowLeft") lightboxPrev();
+  if (e.key === "ArrowRight") lightboxNext();
+});
+</script>
+</body>
+</html>
